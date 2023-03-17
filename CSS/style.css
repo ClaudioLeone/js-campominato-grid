@@ -114,9 +114,6 @@ body{
 
 .cell:hover{
     border: 1px solid #000000;
-}
-
-.cell:hover{
     cursor: pointer;
 }
 

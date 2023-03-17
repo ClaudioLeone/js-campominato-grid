@@ -27,7 +27,6 @@ playBtn.addEventListener("click", function () {
     content.classList.add("flex")
 });
 
-
 //FUNCTIONS//
 
 //Genera un array di numeri interi da 1 a 100 disposti sequenzialmente
