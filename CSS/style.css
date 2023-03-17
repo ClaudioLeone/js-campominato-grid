@@ -4,10 +4,22 @@
     box-sizing: border-box;
 }
 
+.h-margin{
+    margin: 0 10px 0 10px;
+}
+
+.display-none{
+    display: none;
+}
+
 .top-btm-navs{
     height: 50px;
     align-items: center;
     justify-content: space-between;
+}
+
+.play-btn{
+    padding: 2px 10px;
 }
 
 .flex{
@@ -33,8 +45,20 @@
 }
 
 .cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 47.8px;
     width: calc(100% / 10 - 2px);
-    background-color: coral;
-    border: 1px solid white;
+    background-color: #f7ffcb;
+    color: rgb(19, 19, 19);
+    border: 1px solid #666666;
+}
+
+.cell:hover{
+    cursor: pointer;
+}
+
+.light-blue{
+    background-color: lightblue;
 }

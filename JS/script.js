@@ -8,18 +8,46 @@
 */
 
 const cellTotNum = 100;
-const genGrid = genNumArray(cellTotNum, 1);
+const numbers = genNumArray(cellTotNum, 1);
 
-//FUNCTIONS
+const cellGrid = document.querySelector(".grid-row");
+for (let i = 0; i < numbers.length; i++) {
+    const currentNumber = numbers[i];
+    const addContent = genCell(currentNumber);
+    addContent.addEventListener("click", handleItemClick)
+    cellGrid.append(addContent);
+}
+
+const playBtn = document.querySelector(".play-btn");
+playBtn.addEventListener("click", function () {
+    const content = document.querySelector(".grid-row");
+    content.classList.remove("display-none");
+    content.classList.add("flex")
+});
+
+
+//FUNCTIONS//
 
 //Genera un array di numeri interi da 1 a 100 disposti sequenzialmente
 function genNumArray(totalNum, firstNum) {
     const numArray = [];
-    console.log(numArray);
     for (let i = firstNum; i <= totalNum; i++) {
         numArray.push(i);
         // console.log(i);
     }
 
     return numArray;
-  }
+}
+
+//Genera una nuova cella con uno span per l'inserimento del testo
+function genCell(text) {
+    const newCell = document.createElement("div");
+    newCell.classList.add("cell");
+    newCell.innerHTML = `<span>${text}</span>`;
+    return newCell;
+}
+
+//Gestisce il click dell'utente per un particolare caso [far diventare azzurre le celle che si cliccano]
+function handleItemClick() {
+    this.classList.add("light-blue");
+}
