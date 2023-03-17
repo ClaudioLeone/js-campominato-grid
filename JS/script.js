@@ -20,6 +20,8 @@ for (let i = 0; i < numbers.length; i++) {
 
 const playBtn = document.querySelector(".play-btn");
 playBtn.addEventListener("click", function () {
+    this.classList.remove("play-btn");
+    this.classList.add("grey-out");
     const content = document.querySelector(".grid-row");
     content.classList.remove("display-none");
     content.classList.add("flex")
@@ -43,11 +45,14 @@ function genNumArray(totalNum, firstNum) {
 function genCell(text) {
     const newCell = document.createElement("div");
     newCell.classList.add("cell");
-    newCell.innerHTML = `<span>${text}</span>`;
+    newCell.innerHTML = `<span><strong>${text}</strong></span>`;
     return newCell;
 }
 
-//Gestisce il click dell'utente per un particolare caso [far diventare azzurre le celle che si cliccano]
+//Gestisce il click dell'utente per un particolare caso
+//[far diventare azzurre le celle che si cliccano e riportare il numero della cella cliccata sul log]
 function handleItemClick() {
     this.classList.add("light-blue");
+    const numToLog = parseInt(this.querySelector("span").textContent);
+    console.log(numToLog);
 }
